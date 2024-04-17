@@ -1,0 +1,56 @@
+[
+  {
+    "Type": "TransitionPoint",
+    "Position": {
+      "X": 958,
+      "Y": 1224
+    },
+    "TargetRoomId": "roomEggCave",
+    "TargetSpawnPointId": "roomCave"
+  },
+  {
+    "Type": "TransitionPoint",
+    "Position": {
+      "X": 1884,
+      "Y": 1432
+    },
+    "TargetRoomId": "roomCrossroads",
+    "TargetSpawnPointId": "roomCave"
+  },
+  {
+    "Type": "SpawnPoint",
+    "Position": {
+      "X": 1850.4373,
+      "Y": 1500.3534
+    },
+    "Id": "roomCrossroads",
+    "SpawnDirection": "SpriteDirection.north"
+  },
+  {
+    "Type": "SpawnPoint",
+    "Position": {
+      "X": 1152,
+      "Y": 1312
+    },
+    "Id": "LeftEggEscape",
+    "SpawnDirection": -1
+  },
+  {
+    "Type": "SpawnPoint",
+    "Position": {
+      "X": 1617.0334,
+      "Y": 1232.25
+    },
+    "Id": "roomMountainEntry",
+    "SpawnDirection": -1
+  },
+  {
+    "Type": "TransitionPoint",
+    "Position": {
+      "X": 1535,
+      "Y": 1137.3225
+    },
+    "TargetRoomId": "roomMountainEntry",
+    "TargetSpawnPointId": "roomCave"
+  }
+]
