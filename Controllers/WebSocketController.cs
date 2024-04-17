@@ -52,19 +52,18 @@ public class WebSocketController(ConcurrentDictionary<uint, StaticObjects> stati
 
             while (true)
             {
-
-                foreach (var item in connections)
+                if (isSuccess)
                 {
-                    if (item.Value.State != WebSocketState.Open || item.Key == networkObjectId)
-                    {
-                        continue;
-                    }
+                    string serializeObjectPackage = "[" + ReplicationPackageType + "," + strObject + "]";
+                    var bytesToSend = Encoding.UTF8.GetBytes(serializeObjectPackage);
+                    ArraySegment<byte> arraySegment = new(bytesToSend);
 
-                    if (isSuccess)
+                    foreach (var item in connections)
                     {
-                        string serializeObjectPackage = "[" + ReplicationPackageType + "," + strObject + "]";
-                        var bytesToSend = Encoding.UTF8.GetBytes(serializeObjectPackage);
-                        ArraySegment<byte> arraySegment = new(bytesToSend);
+                        if (item.Value.State != WebSocketState.Open || item.Key == networkObjectId)
+                        {
+                            continue;
+                        }
 
                         await item.Value.SendAsync(
                         arraySegment,
